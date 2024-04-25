@@ -1,0 +1,19 @@
+№2
+import math
+x = 2
+t = 2
+result = math.sqrt(0.3*t*x) + (1/math.tan(x/2))**2
+print(result)
+№3
+import math
+x = 0.05
+result = math.sqrt((x + 3) / (3*x))**7 + math.cos(5*x)**3
+print(result)
+№4
+import math
+x = 1
+y = 2
+z = 1
+t = 3
+result = (8 * abs(x*y)) / (3*t*z) - math.log((x+1), math.e)**3
+print(result)
