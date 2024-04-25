@@ -1,0 +1,15 @@
+x = 5
+y = 10
+z = 3
+min_xyz = min(x+y+z, min(y,z))
+max_xyz = max(y,z)
+if max_xyz != 0:
+    u = 1 + min_xyz / max_xyz
+else:
+    u = "деление на ноль"
+print("x =", x)
+print("y =", y)
+print("z =", z)
+print("Минимум (x+y+z, min(y,z)):", min_xyz)
+print("Максимум (y,z):", max_xyz)
+print("Значение u:", u)
