@@ -1,0 +1,7 @@
+import math
+x = 2
+y = 2
+z = 2
+t = 2
+result = (x**y)**(t*z) - math.exp(3*x)
+print(result)
