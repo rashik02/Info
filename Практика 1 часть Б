@@ -1,0 +1,7 @@
+import math
+x = 1
+y = 4
+t = 4*x - y/x
+r = x + y
+result = (math.cos(t)**3 - r) / (5*t + 2*r)
+print(result)
