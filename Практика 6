@@ -1,0 +1,7 @@
+m = 10 
+A = [2, 5, 8, 3, 6, 9, 1, 4, 7, 0] 
+print("Исходный массив A:", A)
+reversed_A = A[::-1]
+sum_reversed = sum(reversed_A)
+print("Новый массив A в обратном порядке:", reversed_A)
+print("Сумма элементов нового массива:", sum_reversed)
