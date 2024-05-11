@@ -1,0 +1,16 @@
+def F(x):
+    return x**3 - 1.7*x**2 + x - 0.174
+
+def F1(x):
+    return 3*x**2-3.4*x+1
+
+x1 = float(input("Введите X0: "))
+eps = 0.001
+x0 = x1 + 2*eps
+
+while abs(x1 - x0) > eps:
+    x0 = x1
+    x1 = x0 - F(x0) / F1(x0)
+
+print('X = ', x1)
+print('F(X) = ', F(x1))
