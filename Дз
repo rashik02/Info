@@ -1,0 +1,54 @@
+def read_matrix_from_file(filename):
+  """Читает матрицу из файла."""
+  with open(filename, 'r') as f:
+    rows = int(f.readline().strip())
+    cols = int(f.readline().strip())
+    matrix = []
+    for _ in range(rows):
+      row = list(map(float, f.readline().strip().split()))
+      matrix.append(row)
+  return matrix, rows, cols
+
+def find_min_in_column(vector):
+  """Находит минимальный элемент в векторе."""
+  min_value = vector[0]
+  min_index = 0
+  for i, val in enumerate(vector):
+    if val < min_value:
+      min_value = val
+      min_index = i
+  return min_value, min_index
+
+def sum_negative_elements(vector):
+  """Суммирует отрицательные элементы в векторе."""
+  sum_neg = 0
+  for val in vector:
+    if val < 0:
+      sum_neg += val
+  return sum_neg
+
+# Ввод данных
+filename = input("Введите имя файла с матрицей: ")
+k = int(input("Введите номер столбца (k): "))
+
+# Чтение матрицы из файла
+matrix, rows, cols = read_matrix_from_file(filename)
+
+# Извлечение k-го столбца в виде вектора
+column = [row[k-1] for row in matrix]
+
+# Нахождение минимального элемента в столбце
+min_value, min_index = find_min_in_column(column)
+
+# Извлечение строки, где находится минимальный элемент
+row = matrix[min_index]
+
+# Суммирование отрицательных элементов в строке
+sum_neg = sum_negative_elements(row)
+
+# Вывод результатов
+print("Матрица A:")
+for row in matrix:
+  print(row)
+print(f"Минимальный элемент в {k}-ом столбце: {min_value}")
+print(f"Сумма отрицательных элементов в строке, где находится минимальный элемент: {sum_neg}")
